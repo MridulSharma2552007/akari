@@ -2,7 +2,7 @@ import 'package:akari/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  MyApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
