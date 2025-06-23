@@ -1,3 +1,4 @@
+import 'package:akari/authservice/auth_gate.dart';
 import 'package:akari/pages/pageview_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => PageviewPages()),
+        MaterialPageRoute(builder: (_) => AuthGate()),
       );
     });
   }

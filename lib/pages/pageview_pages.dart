@@ -9,7 +9,7 @@ class PageviewPages extends StatefulWidget {
 }
 
 class _PageviewPagesState extends State<PageviewPages> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
