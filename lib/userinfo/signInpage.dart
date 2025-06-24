@@ -1,20 +1,25 @@
 import 'package:akari/authservice/auth_service.dart';
 import 'package:akari/pages/home.dart';
+import 'package:akari/userinfo/userrole.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PageoneSignin extends StatefulWidget {
-  const PageoneSignin({super.key});
+class Signinpage extends StatefulWidget {
+  const Signinpage({super.key});
 
   @override
-  State<PageoneSignin> createState() => _PageoneSigninState();
+  State<Signinpage> createState() => _SigninpageState();
 }
 
-class _PageoneSigninState extends State<PageoneSignin> {
+class _SigninpageState extends State<Signinpage> {
   final authService = AuthService();
+
   final _emailcontroller = TextEditingController();
+
   final _passwordcontroller = TextEditingController();
+
   final _confirmpasswordcontroller = TextEditingController();
+
   //sign up logic
   Future<void> signUp() async {
     final email = _emailcontroller.text;
@@ -44,7 +49,7 @@ class _PageoneSigninState extends State<PageoneSignin> {
       await authService.signUpWithEmailPassword(email, password);
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => Userrole()),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(

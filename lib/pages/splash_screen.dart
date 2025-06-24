@@ -1,5 +1,4 @@
 import 'package:akari/authservice/auth_gate.dart';
-import 'package:akari/pages/pageview_pages.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

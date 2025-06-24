@@ -1,5 +1,6 @@
 import 'package:akari/pages/home.dart';
-import 'package:akari/pages/pageview_pages.dart';
+
+import 'package:akari/userinfo/loginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -22,7 +23,7 @@ class AuthGate extends StatelessWidget {
         if (session != null) {
           return Home();
         } else {
-          return PageviewPages();
+          return Loginpage();
         }
       },
     );

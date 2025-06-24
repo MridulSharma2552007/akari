@@ -1,5 +1,5 @@
 import 'package:akari/authservice/auth_service.dart';
-import 'package:akari/pageviewpages/pageone_signin.dart';
+import 'package:akari/userinfo/signInpage.dart';
 import 'package:flutter/material.dart';
 
 class Logincontainer extends StatefulWidget {
@@ -73,9 +73,7 @@ class _LogincontainerState extends State<Logincontainer> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => PageoneSignin(),
-                        ),
+                        MaterialPageRoute(builder: (context) => Signinpage()),
                       );
                     },
                     child: Text(
