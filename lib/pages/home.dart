@@ -8,8 +8,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = AuthService();
     final currentEmail = authService.getUserEmail();
-    void signOut() {
-      authService.signOut();
+    Future<void> signOut() async {
+      await authService.signOut();
     }
 
     return Scaffold(
