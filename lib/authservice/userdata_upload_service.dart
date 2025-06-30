@@ -3,9 +3,11 @@ class UserdataUploadService {
   String? name;
   String? role;
   int? rollNo;
+  String? email;
 
   // Singleton pattern so you can access the same instance from anywhere
-  static final UserdataUploadService _instance = UserdataUploadService._internal();
+  static final UserdataUploadService _instance =
+      UserdataUploadService._internal();
   factory UserdataUploadService() => _instance;
   UserdataUploadService._internal();
 
@@ -14,6 +16,7 @@ class UserdataUploadService {
     name = null;
     role = null;
     rollNo = null;
+    email = null;
   }
 
   // Optional: Check if all fields are filled

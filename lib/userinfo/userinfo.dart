@@ -1,4 +1,7 @@
+import 'package:akari/authservice/userdata_upload_service.dart';
+import 'package:akari/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class Userinfo extends StatefulWidget {
@@ -17,6 +20,7 @@ class _UserinfoState extends State<Userinfo> {
   }) async {
     final supabase = Supabase.instance.client;
     final user = supabase.auth.currentUser;
+    final userService = UserdataUploadService();
     if (user == null) {
       print("❌ User Not logged in ");
     }
@@ -24,12 +28,19 @@ class _UserinfoState extends State<Userinfo> {
       'name': name,
       'roll no.': RollNo,
       'created_at': DateTime.now().toIso8601String(),
+      'role': userService.role,
+      'email': user?.email,
     });
     if (response.error != null) {
       print("❌ Failed: ${response.error!.message}");
     } else {
       print("✅ Data inserted successfully");
     }
+  }
+
+  void togglelogginswitch() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isLoggedIn', true);
   }
 
   @override
@@ -92,6 +103,11 @@ class _UserinfoState extends State<Userinfo> {
                       if (name.isNotEmpty && roll != null) {
                         insertUserNameAndRollNo(name: name, RollNo: roll);
                       }
+                      togglelogginswitch();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue.shade700,
