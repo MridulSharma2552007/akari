@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: Text(
-          currentEmail ?? 'No user logged in',
+          currentEmail ?? 'No User Logged In',
           style: const TextStyle(fontSize: 20),
         ),
       ),
