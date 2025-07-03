@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                 if (context.mounted) {
                   Navigator.pushReplacementNamed(
                     context,
-                    '/',
+                    '',
                   ); // Or push to LoginPage
                 }
               },
